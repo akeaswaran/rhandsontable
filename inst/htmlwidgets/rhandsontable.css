@@ -7,7 +7,8 @@
 }
 
 .handsontable {
-  overflow: auto;
+/* @Harmen: DISABLED THIS BECAUSE IT HIDES THE FILTERS & DROPDOWN MENUS
+  overflow: auto; */
 }
 
 /* fix for sparkline hover */
@@ -21,7 +22,9 @@
   z-index: 1000 !important;
 }
 
+
 .handsontable table thead th {
   white-space: pre-line;
-  /*max-width: /* enter here your max header width */
+  /*max-width: enter here your max header width */
 }
+

@@ -17,6 +17,37 @@ opts_knit$set(warning = FALSE, error = FALSE, message = FALSE, cache = FALSE,
               fig.width=7, fig.height=3)
 ```
 
+
+## Formulas
+
+```{r}
+# MAT =   ['Travel ID', 'Destination', 'Base price', 'Price with extra cost'],
+#   ['154', 'Rome', 400, '=ROUND(ADDITIONAL_COST+C2,0)'],
+#   ['155', 'Athens', 300, '=ROUND(ADDITIONAL_COST+C3,0)'],
+#   ['156', 'Warsaw', 150, '=ROUND(ADDITIONAL_COST+C4,0)']
+
+MAT = data.frame(
+  "Travel ID" = as.integer(c(154, 155, 156)),
+  "Destination" = c("Rome", "Athens", "Warsaw"),
+  "Base Price" = c(400, 300, 150),
+  "Price with extra cost" = c('=SWITCH(B1,"Rome",10,"Atlanta","15","Green Bay",20,0)', '=ROUND(100*C2,0)', '=ROUND(100*C3,0)'),
+  check.names = F
+)
+
+rhandsontable(
+  MAT, 
+  rowHeaders = NULL, 
+  afterChange = htmlwidgets::JS("
+  (changes, source) => {
+    changes?.forEach(([row, prop, oldValue, newValue]) => {
+      // Some logic...
+      console.log(source)
+    });
+  }
+  ")
+) 
+```
+
 ## Introduction
 
 **rhandsontable** is a htmlwidget based on the [handsontable.js](https://handsontable.com) library.
