@@ -138,6 +138,7 @@ rhandsontable <- function(data, colHeaders, rowHeaders, comments = NULL,
     debug = ifelse(is.null(debug) || is.na(debug) || !is.numeric(debug), 0, debug),
     search = search,
     licenseKey = "non-commercial-and-evaluation",
+    themeName = 'ht-theme-main-dark-auto',
     formulas = list(
       engine = JS("HyperFormula")
     )
