@@ -8,7 +8,6 @@ dependencies:
   stylesheet:
     - handsontable.min.css
     - ht-theme-main.css
-    - ht-theme-horizon.css
 - name: hyperformula
   version: 2.7.1
   src: "htmlwidgets/lib/hyperformula"

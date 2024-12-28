@@ -38,7 +38,7 @@ rhandsontable <- function(data, colHeaders, rowHeaders, comments = NULL,
                           useTypes = TRUE, readOnly = NULL,
                           selectCallback = FALSE,
                           width = NULL, height = NULL, digits = 4,
-                          debug = NULL, search = FALSE, themeName = "ht-theme-main-dark-auto", ...) {
+                          debug = NULL, search = FALSE, ...) {
   rColHeaders = colnames(data)
   if (.row_names_info(data) > 0L)
     rRowHeaders = rownames(data)
@@ -138,7 +138,6 @@ rhandsontable <- function(data, colHeaders, rowHeaders, comments = NULL,
     debug = ifelse(is.null(debug) || is.na(debug) || !is.numeric(debug), 0, debug),
     search = search,
     licenseKey = "non-commercial-and-evaluation",
-    themeName = themeName,
     formulas = list(
       engine = JS("HyperFormula")
     )
