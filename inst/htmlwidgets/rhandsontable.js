@@ -152,12 +152,17 @@ HTMLWidgets.widget({
 
     };
 
-    x.afterLoadData = function(firstTime) {
+    x.afterLoadData = function(sourceData, firstTime, source) {
       if (this.params && this.params.debug) {
         if (this.params.debug > 0) {
-          console.log("afterLoadData: " + firstTime);
+          console.log("afterLoadData: " + firstTime + " / " + "source");
         }
       }
+      Shiny.onInputChange(this.rootElement.id, {
+        data: this.getData(),
+        changes: { event: "afterLoadData", changes: null },
+        params: this.params
+      });
     };
 
     x.afterChangesObserved = function(firstTime) {
