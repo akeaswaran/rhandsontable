@@ -11,9 +11,9 @@
   overflow: auto; */
 }
 
-.handsontable .htCheckboxRendererInput {
+/*.handsontable .htCheckboxRendererInput {
   appearance: checkbox;
-}
+}*/
 
 /* fix for sparkline hover */
 .jqstooltip{
