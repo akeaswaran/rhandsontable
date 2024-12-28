@@ -14,7 +14,7 @@ HTMLWidgets.widget({
   },
 
   renderValue: function(el, x, instance) {
-
+    el.classList.add("ht-theme-main")
     // convert json to array
     if (x.data.length > 0 && x.data[0].constructor === Array) {
       x.data = x.data;
